@@ -17,10 +17,42 @@ function saveData() {
 function timeUpdate () {
     let presentTime = moment().hours();
 
-    
+    $('.hourBlock').each(function () {
+        let selectedHour = parseInt($(this).attr('id').split('-')[1]);
 
-    
-    
 
+        if (selectedHour < presentTime) {
+
+            $(this).addClass('past');
+        }
+        else if (blockHour === currentHour){
+            $(this).removeClass('past');
+            $(this).addClass('present');
+        }
+        else {
+            $(this).removeClass('past');
+            $(this).removeClass('present');
+            $(this).addClass('future');
+        }
+        
+
+    });
+
+    }
+
+
+
+
+
+function getData(){
+    for(i = 9; i < 18; i++){
+        $('#block-i .event').val(localStorage.getItem('block-i'));
+    }
 
 }
+
+$(document).ready(function () {
+    $('#currentDay').text(moment().format('dddd, MMMM Do')); // display current day
+    getData();
+
+})
