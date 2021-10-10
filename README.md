@@ -4,3 +4,5 @@ Simple day scheduler app. The user is able to input daily activities/events for 
 
 The application can be found at: https://giovannimalcolm.github.io/work-day-scheduler/
 
+![Screenshot](https://github.com/giovannimalcolm/work-day-scheduler/blob/main/images/Screen%20Shot%202021-10-10%20at%203.18.21%20PM.png?raw=true)
+

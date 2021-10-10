@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#currentDay').text(moment().format('dddd, MMMM Do')); // display current day
     timeUpdate();
 
-    $('.saveBtn').on('click', function(){
+    $('.saveBtn').on('click', function () {
         let event = $(this).siblings('.event').val(); //get text content of event 
         let hour = $(this).parent().attr('id') //pull time that is associated with event from ID name
         localStorage.setItem(hour, event)
@@ -26,14 +26,14 @@ $(document).ready(function () {
 
 
 
-function timeUpdate () {
+function timeUpdate() {
     let presentTime = moment().hours();
     $('.hourBlock').each(function () {
         let selectedHour = parseInt($(this).attr('id').split('-')[1]);
         if (selectedHour < presentTime) {
             $(this).addClass('past');
         }
-        else if (selectedHour === presentTime){
+        else if (selectedHour === presentTime) {
             $(this).removeClass('past');
             $(this).addClass('present');
         }
@@ -43,13 +43,13 @@ function timeUpdate () {
             $(this).addClass('future');
         }
     });
-    }
+}
 
-    $('.clearBtn').on('click', function(){
-        localStorage.clear();
-        location.reload();
+$('.clearBtn').on('click', function () {
+    localStorage.clear();
+    location.reload();
 
-    })
+})
 
 
 
